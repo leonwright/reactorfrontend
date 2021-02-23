@@ -8,8 +8,7 @@ import { AdjustmentsIcons, CollectionIcon, GithubIcon, HomeIcon } from "./svgs";
 import { TopMenu, TopMenuitem } from "./TopMenu";
 import DropdownMenu from "./TopMenu/Dropdown/DropdownMenu";
 
-const InnerLayout = ({ children }) => {
-  const { user, error, isLoading } = useUser();
+const InnerLayout = ({ children, user }) => {
   const router = useRouter();
   const items = [
     {

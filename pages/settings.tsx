@@ -1,11 +1,20 @@
 import InnerLayout from "../components/InnerLayout";
+import { GetServerSideProps } from "next";
+import { withPageAuthRequired, useUser } from "@auth0/nextjs-auth0";
 
-const settings = () => {
+const settings = ({}) => {
+  const { user } = useUser();
+
   return (
-    <InnerLayout>
+    <InnerLayout user={user}>
       <h1>Settings</h1>
     </InnerLayout>
   );
 };
 
-export default settings;
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const { user } = useUser();
+//   return { props: { user } };
+// };
+
+export default withPageAuthRequired(settings);

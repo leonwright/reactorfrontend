@@ -12,7 +12,7 @@ const NewPage = () => {
   const { user } = useUser();
 
   return (
-    <InnerLayout>
+    <InnerLayout user={user}>
       <button
         className="flex items-center hover:opacity-50"
         onClick={() => {

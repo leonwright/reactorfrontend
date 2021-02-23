@@ -6,9 +6,11 @@ import { withPageAuthRequired, useUser } from "@auth0/nextjs-auth0";
 import { ApplicationsPanel, Panel } from "../../components/Panel";
 
 const AppsPage = () => {
+  const { user } = useUser();
+
   const router = useRouter();
   return (
-    <InnerLayout>
+    <InnerLayout user={user}>
       <button
         className="flex items-center hover:opacity-50"
         onClick={() => {
