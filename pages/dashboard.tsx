@@ -7,9 +7,4 @@ const dashboard = ({ children }) => {
   return <InnerLayout user={user}>{children}</InnerLayout>;
 };
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   const { user } = useUser();
-//   return { props: { user } };
-// };
-
 export default withPageAuthRequired(dashboard);
